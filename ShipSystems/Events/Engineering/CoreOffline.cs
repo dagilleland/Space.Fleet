@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 
 namespace ShipSystems.Events.Engineering
 {
+    public class EngineStopped : IEvent
+    {
+
+    }
     public class EngineStarted : IEvent
     {
         
+    }
+    public class EngineOnline : IEvent
+    {
+
     }
     public class EngineOffline : IEvent
     {

@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A29987F-B725-47B3-AE8B-B2CE07F5498E}</ProjectGuid>
+    <ProjectGuid>{91AB3726-386E-4BF5-BDD6-CB27242E79B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShipSystems</RootNamespace>
-    <AssemblyName>ShipSystems</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>ShipSystem.Engineering</RootNamespace>
+    <AssemblyName>ShipSystem.Engineering</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Enexure.MicroBus.InfrastructureContracts, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Enexure.MicroBus.InfrastructureContracts.3.6.0\lib\net451\Enexure.MicroBus.InfrastructureContracts.dll</HintPath>
+    </Reference>
     <Reference Include="Enexure.MicroBus.MessageContracts, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Enexure.MicroBus.MessageContracts.3.2.0\lib\net40\Enexure.MicroBus.MessageContracts.dll</HintPath>
     </Reference>
@@ -43,22 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\AllSystems\DamageApplied.cs" />
-    <Compile Include="Commands\Engineering\CoreOffline.cs" />
-    <Compile Include="Commands\Navigation\CourseEntered.cs" />
-    <Compile Include="Commands\Tactical\SheildsRaised.cs" />
-    <Compile Include="Commands\Tactical\WeaponsCharged.cs" />
-    <Compile Include="Events\AllSystems\DamageApplied.cs" />
-    <Compile Include="Events\Engineering\CoreOffline.cs" />
-    <Compile Include="Events\Navigation\CourseEntered.cs" />
-    <Compile Include="Events\Tactical\SheildsRaised.cs" />
-    <Compile Include="Events\Tactical\WeaponsCharged.cs" />
-    <Compile Include="Interfaces.cs" />
+    <Compile Include="Aggregates\StarDrive.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ShipSystems\ShipSystems.csproj">
+      <Project>{8a29987f-b725-47b3-ae8b-b2ce07f5498e}</Project>
+      <Name>ShipSystems</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
