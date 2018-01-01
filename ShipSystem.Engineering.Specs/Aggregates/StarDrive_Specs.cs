@@ -44,7 +44,7 @@ namespace ShipSystem.Engineering.Specs.Aggregates
             var sut = new StarDrive(new EngineStarted());
             sut.BringOnline();
             Assert.Single(sut.Changes);
-            var actual = sut.Changes.FirstOrDefault() as EngineOnline;
+            var actual = sut.Changes.FirstOrDefault() as PowerOnline;
             Assert.NotNull(actual);
         }
     }

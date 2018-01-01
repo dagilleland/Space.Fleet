@@ -15,11 +15,11 @@ namespace ShipSystems.Events.Engineering
     {
         
     }
-    public class EngineOnline : IEvent
+    public class PowerOnline : IEvent
     {
 
     }
-    public class EngineOffline : IEvent
+    public class PowerOffline : IEvent
     {
         
     }

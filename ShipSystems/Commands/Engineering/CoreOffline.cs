@@ -1,4 +1,5 @@
 ﻿using Enexure.MicroBus;
+using ShipSystems.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace ShipSystems.Commands.Engineering
 {
-    public class StartEngine : ICommand
+    public class StartEngine : AbstractAggregateId, ICommand
     {
-        
+        public StartEngine(Guid id) : base(id)
+        {
+
+        }
     }
     public class TakeEngineOffline : ICommand
     {

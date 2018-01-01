@@ -16,4 +16,11 @@ namespace ShipSystems
     {
 
     }
+
+    // TODO: Move to a more "neutral" and "global" assembly (rather than this one that is focused on Domain Commands/Events)
+    public interface IEventStore<TKey>
+    {
+        IEnumerable<IEvent> LoadEventStream(TKey key);
+        void AppendToStream(TKey key, IList<IEvent> events);
+    }
 }

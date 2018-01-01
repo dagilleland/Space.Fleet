@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AllSystems\DamageApplied.cs" />
+    <Compile Include="Domains\AbstractAggregateId.cs" />
     <Compile Include="Commands\Engineering\CoreOffline.cs" />
     <Compile Include="Commands\Navigation\CourseEntered.cs" />
     <Compile Include="Commands\Tactical\SheildsRaised.cs" />

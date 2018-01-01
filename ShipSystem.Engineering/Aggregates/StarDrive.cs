@@ -37,14 +37,14 @@ namespace ShipSystem.Engineering.Aggregates
         }
         public void ShutDown()
         {
-            Track(new EngineOffline(), Apply);
+            Track(new PowerOffline(), Apply);
             Track(new EngineStopped(), Apply);
         }
         public void BringOnline()
         {
             if (!Running)
                 throw new Exception("StarDrive is not running and cannot be brought online");
-            Track(new EngineOnline(), Apply);
+            Track(new PowerOnline(), Apply);
         }
         #endregion
 
@@ -61,11 +61,11 @@ namespace ShipSystem.Engineering.Aggregates
         {
             Running = false;
         }
-        private void Apply(EngineOffline e)
+        private void Apply(PowerOffline e)
         {
 
         }
-        private void Apply(EngineOnline e)
+        private void Apply(PowerOnline e)
         {
 
         }
